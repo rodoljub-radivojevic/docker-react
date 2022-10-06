@@ -4,7 +4,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t rodoljubradivojevic/docker_react:v3 -f Dockerfile.dev .
+  - docker build -t rodoljubradivojevic/docker_react:v2 -f Dockerfile.dev .
+  - docker push rodoljubradivojevic/docker_react:v2
 
 script:
-  - docker run -e CI=true rodoljubradivojevic/docker-react:v3 npm run test
+  - docker run -e CI=true rodoljubradivojevic/docker-react:v2 npm run test
